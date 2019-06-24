@@ -54,15 +54,16 @@ char verifica(){
 			){
 		return 'o';
 	}
-
+	   return ' ';	
 }
 int main(){
 	do{
 		if(m){
 			if(jogador1){
 				cout << "Jogador 1 Pontos: " << j1;
-				cout << "\nDigite o numero da linha/coluna: \n";
+				cout << "\n*Digite -1 para sair.\n*Digite o numero da linha/coluna: \n";
 				cin >> linha;
+				if(linha <= -1 || linha > 2){return 0;}
 				cin >> coluna;
 				m = (linha <  3 && coluna < 3) && (linha > -1 && coluna > -1);
 				contem = matriz[linha][coluna];
@@ -106,7 +107,8 @@ int main(){
 			zerar();
 		}
 	}
-	while(linha < 4 || coluna < 4);
+	// while(linha < 4 || coluna < 4);
+	while(coluna < 4);
 	system("pause");
 	return 0;
 }
